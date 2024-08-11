@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const Root = styled('div')(({ theme }) => ({
   flexGrow: 1,
@@ -29,10 +30,10 @@ const Navbar = () => {
             Gardening Website
           </Title>
           <NavLinks>
-            <Button color="inherit">Home</Button>
+          <Link to={"/"}><Button color="inherit">Home</Button></Link>
+            <Link to={"/info"}><Button color="inherit">Info</Button></Link>
             <Button color="inherit">About</Button>
             <Button color="inherit">Services</Button>
-            <Button color="inherit">Contact</Button>
           </NavLinks>
         </Toolbar>
       </AppBar>

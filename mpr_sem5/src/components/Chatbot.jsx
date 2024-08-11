@@ -12,7 +12,7 @@ const theme = createTheme({
 });
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([{sender:'bot',text:"Welcome to Garden Of Eden..."}]);
   const [inputText, setInputText] = useState('');
 
   const handleSendMessage = () => {

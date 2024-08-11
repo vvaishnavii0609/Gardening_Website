@@ -1,13 +1,18 @@
-import Navbar from "../components/Navbar"
-import Chatbot from "../components/chatbot"
+
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import Chatbot_Page from './pages/Chatbot_Page'
+import Info from './pages/Info'
+
 
 function App() {
 
   return (
-    <>
-      <Navbar/>
-      <Chatbot/>
-    </>
+    <Router>
+      <Routes>
+      <Route path='/' element={<Chatbot_Page/>}/>
+      <Route path='/info' element={<Info/>}/>
+      </Routes>
+    </Router>
   )
 }
 
