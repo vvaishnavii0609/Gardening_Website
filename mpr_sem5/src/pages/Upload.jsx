@@ -27,10 +27,8 @@ const Upload = () => {
     try {
       const response = await axios.post('http://localhost:3000/api/plants', plantData);
       console.log('Plant uploaded successfully:', response.data);
-      // Reset form or show success message
     } catch (error) {
       console.error('Error uploading plant:', error);
-      // Show error message to user
     }
   };
 
