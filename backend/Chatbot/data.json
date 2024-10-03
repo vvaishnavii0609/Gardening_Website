@@ -1,0 +1,598 @@
+[
+  {
+    "question": "How often should I water my garden?",
+    "answer": "It depends on the type of plants and the climate, but generally, gardens need about 1 inch of water per week."
+  },
+  {
+    "question": "What is the best time to water plants?",
+    "answer": "The best time to water plants is early in the morning or late in the afternoon to reduce evaporation."
+  },
+  {
+    "question": "How can I improve soil quality?",
+    "answer": "You can improve soil quality by adding organic matter such as compost, manure, or mulch."
+  },
+  {
+    "question": "What are some common garden pests?",
+    "answer": "Common garden pests include aphids, caterpillars, slugs, snails, and spider mites."
+  },
+  {
+    "question": "How do I get rid of weeds?",
+    "answer": "You can get rid of weeds by pulling them out by hand, using mulch to suppress them, or applying a weed killer."
+  },
+  {
+    "question": "What is companion planting?",
+    "answer": "Companion planting is the practice of growing different plants together to benefit each other, such as planting marigolds with tomatoes to deter pests."
+  },
+  {
+    "question": "How do I start a compost pile?",
+    "answer": "To start a compost pile, layer green materials like vegetable scraps and grass clippings with brown materials like leaves and straw, and keep it moist and aerated."
+  },
+  {
+    "question": "What is the best way to prune plants?",
+    "answer": "The best way to prune plants is to use clean, sharp tools and make cuts just above a bud or branch to encourage healthy growth."
+  },
+  {
+    "question": "How do I prevent plant diseases?",
+    "answer": "You can prevent plant diseases by practicing crop rotation, using disease-resistant varieties, and keeping your garden clean and well-maintained."
+  },
+  {
+    "question": "What are some good plants for beginners?",
+    "answer": "Good plants for beginners include tomatoes, lettuce, radishes, marigolds, and sunflowers because they are easy to grow and maintain."
+  },
+  {
+    "question": "How do I attract pollinators to my garden?",
+    "answer": "You can attract pollinators by planting flowers like lavender, daisies, and sunflowers, and avoiding pesticide use."
+  },
+  {
+    "question": "What is the best type of mulch for my garden?",
+    "answer": "Organic mulch like straw, leaves, or wood chips is great for retaining moisture and improving soil quality."
+  },
+  {
+    "question": "How can I control garden pests organically?",
+    "answer": "You can control pests organically by using neem oil, diatomaceous earth, or introducing beneficial insects like ladybugs."
+  },
+  {
+    "question": "How do I transplant seedlings?",
+    "answer": "To transplant seedlings, gently remove them from their original containers, plant them in the new soil, and water them immediately to reduce transplant shock."
+  },
+  {
+    "question": "What is crop rotation?",
+    "answer": "Crop rotation is the practice of growing different crops in the same area in sequential seasons to maintain soil health and reduce pest and disease problems."
+  },
+  {
+    "question": "How do I fertilize my garden?",
+    "answer": "Fertilize your garden by using organic compost or a balanced fertilizer based on your plants' needs, following the package instructions."
+  },
+  {
+    "question": "What is the best way to water a vegetable garden?",
+    "answer": "The best way to water a vegetable garden is to use drip irrigation or soaker hoses to deliver water directly to the roots."
+  },
+  {
+    "question": "How do I grow herbs indoors?",
+    "answer": "To grow herbs indoors, plant them in well-draining soil, place them in a sunny spot, and water when the soil feels dry."
+  },
+  {
+    "question": "How do I know when to harvest vegetables?",
+    "answer": "Harvest vegetables when they reach their mature size and color. Refer to seed packets or plant labels for specific timing."
+  },
+  {
+    "question": "What are some natural ways to enrich soil?",
+    "answer": "Natural ways to enrich soil include adding compost, aged manure, green manure, or using cover crops."
+  },
+  {
+    "question": "How do I make my garden drought-resistant?",
+    "answer": "To make your garden drought-resistant, choose drought-tolerant plants, use mulch to retain moisture, and water deeply but infrequently."
+  },
+  {
+    "question": "How can I prevent erosion in my garden?",
+    "answer": "Prevent erosion by planting ground cover plants, using mulch, and building terraces or retaining walls on slopes."
+  },
+  {
+    "question": "What is the difference between annual and perennial plants?",
+    "answer": "Annual plants complete their life cycle in one growing season, while perennials live for more than two years and return each season."
+  },
+  {
+    "question": "What is the importance of aerating soil?",
+    "answer": "Aerating soil improves drainage, reduces compaction, and allows roots to access oxygen, water, and nutrients more effectively."
+  },
+  {
+    "question": "How do I propagate plants?",
+    "answer": "You can propagate plants by taking cuttings, dividing plants, or growing them from seeds or bulbs, depending on the plant type."
+  },
+  {
+    "question": "How do I care for a raised garden bed?",
+    "answer": "Raised garden beds require good-quality soil, regular watering, and periodic fertilization. Keep an eye on drainage and soil moisture."
+  },
+  {
+    "question": "How do I prepare my garden for winter?",
+    "answer": "Prepare your garden for winter by cleaning up dead plants, adding mulch for protection, and covering sensitive plants with frost blankets."
+  },
+  {
+    "question": "What are some tips for container gardening?",
+    "answer": "Use well-draining soil, water regularly, choose pots with drainage holes, and select compact or dwarf plant varieties for container gardening."
+  },
+  {
+    "question": "What is the best way to start seeds indoors?",
+    "answer": "Start seeds indoors by using seed trays or small pots, keeping the soil moist, and placing them in a warm spot with plenty of light."
+  },
+  {
+    "question": "What are heirloom seeds?",
+    "answer": "Heirloom seeds are seeds that have been passed down through generations and are open-pollinated, meaning they produce true-to-type plants."
+  },
+  {
+    "question": "How do I protect my garden from frost?",
+    "answer": "Protect your garden from frost by covering plants with frost blankets or cloth, and watering the soil to retain heat overnight."
+  },
+  {
+    "question": "How do I grow fruit trees in my garden?",
+    "answer": "To grow fruit trees, choose a sunny spot with well-draining soil, plant them in the spring or fall, and water regularly, especially during the first few years."
+  },
+  {
+    "question": "What is hydroponic gardening?",
+    "answer": "Hydroponic gardening is a method of growing plants without soil, using a nutrient-rich water solution instead."
+  },
+  {
+    "question": "How do I create a pollinator-friendly garden?",
+    "answer": "Create a pollinator-friendly garden by planting a variety of nectar-rich flowers, avoiding pesticides, and providing shelter and water sources for pollinators."
+  },
+  {
+    "question": "How do I deal with root rot?",
+    "answer": "Prevent root rot by ensuring proper drainage, not overwatering, and using well-aerated soil. If root rot occurs, remove affected roots and replant."
+  },
+  {
+    "question": "How can I grow plants from cuttings?",
+    "answer": "To grow plants from cuttings, cut a healthy section of the plant just below a node, place it in water or soil, and keep it moist until roots form."
+  },
+  {
+    "question": "How do I prevent slugs and snails in my garden?",
+    "answer": "Prevent slugs and snails by using barriers like copper tape, applying diatomaceous earth, or placing traps and hand-picking them at night."
+  },
+  {
+    "question": "What are some fast-growing vegetables?",
+    "answer": "Fast-growing vegetables include radishes, lettuce, spinach, and green beans, which can be harvested in a few weeks."
+  },
+  {
+    "question": "How do I create a wildlife-friendly garden?",
+    "answer": "Create a wildlife-friendly garden by planting native species, providing water sources, and avoiding pesticides."
+  },
+  {
+    "question": "How do I control powdery mildew?",
+    "answer": "Control powdery mildew by ensuring good air circulation, avoiding overhead watering, and using a fungicide or homemade remedy like baking soda spray."
+  },
+  {
+    "question": "How do I fertilize organically?",
+    "answer": "Fertilize organically by using compost, aged manure, bone meal, fish emulsion, or organic plant fertilizers."
+  },
+  {
+    "question": "How do I grow plants in sandy soil?",
+    "answer": "Improve sandy soil by adding organic matter like compost to increase water retention, and choose plants that are tolerant of dry conditions."
+  },
+  {
+    "question": "What is the best way to water container plants?",
+    "answer": "Water container plants thoroughly until water runs out of the drainage holes, and water more frequently as containers dry out faster."
+  },
+  {
+    "question": "How do I prevent aphids?",
+    "answer": "Prevent aphids by encouraging natural predators like ladybugs, using neem oil, or spraying plants with a mix of water and mild soap."
+  },
+  {
+    "question": "What is square-foot gardening?",
+    "answer": "Square-foot gardening is a method of growing a large amount of produce in a small space by dividing the garden into square-foot sections and planting crops densely."
+  },
+  {
+    "question": "How do I grow tomatoes?",
+    "answer": "Grow tomatoes in well-draining soil with full sunlight, water regularly, and use stakes or cages to support the plants."
+  },
+  {
+    "question": "How do I start a garden from scratch?",
+    "answer": "Start a garden from scratch by selecting a sunny location, testing the soil, adding compost, and planning the layout of your plants."
+  },
+  {
+    "question": "How do I care for succulents?",
+    "answer": "Care for succulents by placing them in bright, indirect sunlight, using well-draining soil, and watering only when the soil is dry."
+  },
+  {
+    "question": "How do I plant bulbs?",
+    "answer": "Plant bulbs in the fall for spring flowers, burying them at a depth three times the height of the bulb, with the pointed end facing up."
+  },
+  {
+    "question": "What is organic gardening?",
+    "answer": "Organic gardening involves growing plants without synthetic fertilizers or pesticides, using natural methods like composting and crop rotation instead."
+  },
+  {
+    "question": "How do I grow strawberries?",
+    "answer": "Grow strawberries in well-draining soil with full sunlight, space them about 12 inches apart, and water regularly to keep the soil moist."
+  },
+  {
+    "question": "How do I prune fruit trees?",
+    "answer": "Prune fruit trees in late winter or early spring by removing dead or diseased branches, thinning crowded branches, and shaping the tree for healthy growth."
+  },
+  {
+    "question": "How do I make organic fertilizer?",
+    "answer": "Make organic fertilizer by composting kitchen scraps, yard waste, and manure, or by using organic materials like bone meal, fish emulsion, or seaweed."
+  },
+  {
+    "question": "What is vermiculture?",
+    "answer": "Vermiculture is the practice of using worms to decompose organic waste into nutrient-rich compost called worm castings."
+  },
+  {
+    "question": "How do I build a raised garden bed?",
+    "answer": "Build a raised garden bed by constructing a frame from wood or stone, filling it with quality soil, and planting your crops in it."
+  },
+  {
+    "question": "How do I care for roses?",
+    "answer": "Care for roses by planting them in a sunny location, watering deeply, pruning deadwood, and applying fertilizer in the growing season."
+  },
+  {
+    "question": "What is no-till gardening?",
+    "answer": "No-till gardening is a method of gardening that avoids disturbing the soil through tilling, instead using mulch and compost to build soil fertility and structure."
+  },
+  {
+    "question": "How do I grow potatoes?",
+    "answer": "Grow potatoes by planting seed potatoes in well-draining soil, covering them with soil or mulch as they grow, and harvesting when the plants die back."
+  },
+  {
+    "question": "What is the best way to water a lawn?",
+    "answer": "The best way to water a lawn is deeply and infrequently, providing about 1 inch of water per week, preferably in the early morning."
+  },
+  {
+    "question": "How do I create a garden plan?",
+    "answer": "Create a garden plan by mapping out your space, selecting plants based on sunlight and soil, and planning for succession planting throughout the season."
+  },
+  {
+    "question": "How do I grow vegetables in the shade?",
+    "answer": "Grow shade-tolerant vegetables like lettuce, spinach, kale, and radishes, and ensure they receive at least 3-4 hours of indirect sunlight daily."
+  },
+  {
+    "question": "What is the best way to plant a tree?",
+    "answer": "The best way to plant a tree is to dig a hole twice the width of the root ball, place the tree in the hole, backfill with soil, and water thoroughly."
+  },
+  {
+    "question": "How do I create a sustainable garden?",
+    "answer": "Create a sustainable garden by using organic methods, planting native species, conserving water, composting, and avoiding synthetic chemicals."
+  },
+  {
+    "question": "How do I control garden pests with companion planting?",
+    "answer": "Control pests by planting pest-repelling plants like marigolds with tomatoes or basil with peppers."
+  },
+  {
+    "question": "What is the best way to grow carrots?",
+    "answer": "Grow carrots in loose, well-draining soil, sow seeds directly in the ground, and thin seedlings to prevent overcrowding."
+  },
+  {
+    "question": "How do I grow a wildflower garden?",
+    "answer": "Grow a wildflower garden by selecting native wildflower seeds, preparing the soil, scattering seeds, and watering regularly until established."
+  },
+  {
+    "question": "What is the importance of composting in gardening?",
+    "answer": "Composting adds organic matter to the soil, improves soil structure, increases moisture retention, and provides nutrients for plants."
+  },
+  {
+    "question": "How do I protect my garden from animals?",
+    "answer": "Protect your garden from animals by installing fences, using repellents, or creating physical barriers around vulnerable plants."
+  },
+  {
+    "question": "How do I grow blueberries?",
+    "answer": "Grow blueberries in acidic, well-draining soil with full sunlight, and water regularly to keep the soil consistently moist."
+  },
+  {
+    "question": "How do I grow plants in clay soil?",
+    "answer": "Amend clay soil with organic matter like compost to improve drainage, and choose plants that tolerate heavy soils like daylilies or asters."
+  },
+  {
+    "question": "How do I grow cucumbers?",
+    "answer": "Grow cucumbers in well-draining soil with full sunlight, provide a trellis for support, and water regularly to keep the soil consistently moist."
+  },
+  {
+    "question": "How do I grow a flower garden?",
+    "answer": "Grow a flower garden by choosing plants based on sunlight and soil conditions, planting in well-draining soil, and watering regularly."
+  },
+  {
+    "question": "How do I care for an indoor garden?",
+    "answer": "Care for an indoor garden by providing adequate light, watering when the soil feels dry, and ensuring proper ventilation to prevent mold."
+  },
+  {
+    "question": "What are some low-maintenance garden plants?",
+    "answer": "Low-maintenance plants include succulents, lavender, ornamental grasses, and native wildflowers that thrive in your climate."
+  },
+  {
+    "question": "How do I plant a garden on a slope?",
+    "answer": "Plant a garden on a slope by using terracing, planting ground covers or shrubs, and ensuring proper drainage to prevent soil erosion."
+  },
+  {
+    "question": "How do I grow corn?",
+    "answer": "Grow corn in well-draining soil with full sunlight, plant seeds in blocks for better pollination, and water regularly during the growing season."
+  },
+  {
+    "question": "How do I create a butterfly garden?",
+    "answer": "Create a butterfly garden by planting nectar-rich flowers like milkweed, coneflowers, and butterfly bush, and providing water sources and shelter."
+  },
+  {
+    "question": "What type of light does a rose need?",
+    "answer": "Roses require at least 6-8 hours of full sun each day to thrive. Full sun encourages healthy growth, abundant flowering, and disease resistance. They can tolerate partial shade but will produce fewer blooms."
+  },
+  {
+    "question": "How much water does a tomato plant need?",
+    "answer": "Tomato plants need deep, consistent watering to thrive, particularly during fruiting. Water them 1-2 inches per week, ensuring the soil stays moist but not waterlogged. Overwatering or underwatering can lead to issues like blossom-end rot."
+  },
+  {
+    "question": "What type of soil is best for basil?",
+    "answer": "Basil thrives in rich, well-draining soil with plenty of organic matter. It prefers a slightly acidic to neutral pH (6.0-7.0). To enhance growth, amend the soil with compost or aged manure before planting."
+  },
+  {
+    "question": "How often should I water lavender?",
+    "answer": "Lavender prefers dry conditions and should be watered sparingly. Water deeply once every 2-3 weeks, allowing the soil to dry out between waterings. Overwatering can cause root rot, so it's essential to avoid waterlogged soil."
+  },
+  {
+    "question": "What pests affect cactus plants?",
+    "answer": "Cacti are commonly affected by spider mites, which cause yellow spots and fine webbing on the plant. Regularly check the plant for any signs of pests, and treat infestations with insecticidal soap or neem oil."
+  },
+  {
+    "question": "What kind of light does mint prefer?",
+    "answer": "Mint grows best in partial sun to partial shade. While it can tolerate full sun, especially in cooler climates, it prefers a few hours of direct sunlight followed by some shade during hot afternoons."
+  },
+  {
+    "question": "How much moisture do ferns need?",
+    "answer": "Ferns prefer consistently moist soil but dislike soggy conditions. Water them regularly, ensuring the top 1-2 inches of soil stay moist. Additionally, they thrive in high-humidity environments, so misting them occasionally is beneficial."
+  },
+  {
+    "question": "What kind of light does an orchid need?",
+    "answer": "Orchids prefer indirect sunlight, as direct sun can scorch their leaves. Place them in bright, filtered light near an east- or north-facing window for optimal growth and blooming."
+  },
+  {
+    "question": "How often should I water aloe vera?",
+    "answer": "Aloe vera requires minimal watering. Water it deeply every 2-3 weeks, allowing the soil to dry completely between waterings. Overwatering can cause root rot, so it's crucial to avoid wet soil."
+  },
+  {
+    "question": "What kind of light does a maple tree need?",
+    "answer": "Maple trees prefer full sun, with at least 6 hours of direct sunlight daily. In partial shade, maples may grow more slowly and have less vibrant fall foliage. Choose a sunny spot with well-draining soil for best growth."
+  },
+  {
+    "question": "How often should sunflowers be watered?",
+    "answer": "Sunflowers need regular watering, particularly during their early growth stages. Water deeply about 1-2 inches per week, ensuring the soil stays moist but well-drained. As they mature, they become more drought-tolerant but still benefit from consistent moisture."
+  },
+  {
+    "question": "What soil type is best for peonies?",
+    "answer": "Peonies thrive in well-draining, fertile soil rich in organic matter. A slightly acidic to neutral pH (6.0-7.0) is ideal. Avoid heavy clay or waterlogged soils, as these can cause root rot and poor growth."
+  },
+  {
+    "question": "What pests affect marigold plants?",
+    "answer": "Marigolds are susceptible to spider mites, which can cause yellowing leaves and webbing. They are also prone to aphids and nematodes, especially in wet or overly crowded conditions. Use insecticidal soap or neem oil to control these pests."
+  },
+  {
+    "question": "How much water do tulips need?",
+    "answer": "Tulips require moderate watering. Water them deeply when planted and keep the soil evenly moist during growth, especially in spring. However, ensure the soil is well-drained to prevent bulb rot."
+  },
+  {
+    "question": "How should thyme be watered?",
+    "answer": "Thyme is drought-tolerant and prefers infrequent, deep watering. Water it every 1-2 weeks, allowing the soil to dry out completely between waterings. Overwatering can lead to root rot, so ensure the soil is well-drained."
+  },
+  {
+    "question": "What pests affect parsley plants?",
+    "answer": "Parsley plants are often affected by leaf scorch, which results from environmental stress like poor watering practices or hot, direct sun. They can also attract aphids and caterpillars. Regular watering and partial shade help prevent leaf scorch."
+  },
+  {
+    "question": "How much sunlight does dill need?",
+    "answer": "Dill requires full sun, with at least 6-8 hours of direct sunlight daily. In areas with hot summers, it may benefit from some afternoon shade to prevent bolting and maintain healthy growth."
+  },
+  {
+    "question": "What type of soil is best for sage?",
+    "answer": "Sage thrives in well-drained, sandy soil with a slightly alkaline pH. It prefers dry conditions, so avoid heavy, water-retentive soils. Adding sand or perlite to the soil can improve drainage, promoting healthier growth."
+  },
+  {
+    "question": "How much water does cilantro need?",
+    "answer": "Cilantro prefers consistently moist soil but does not tolerate soggy conditions. Water it moderately, keeping the soil evenly moist but not waterlogged. Overwatering or waterlogged soil can lead to root rot."
+  },
+  {
+    "question": "What is the ideal light requirement for oregano?",
+    "answer": "Oregano thrives in full sun, requiring at least 6-8 hours of direct sunlight daily. It can tolerate partial shade, but full sun encourages the best flavor and oil production in the leaves."
+  },
+  {
+    "question": "How often should I water rosemary?",
+    "answer": "Rosemary prefers dry conditions and should be watered sparingly. Water deeply every 1-2 weeks, allowing the soil to dry out between waterings. Overwatering can lead to root rot, especially in poorly drained soils."
+  },
+  {
+    "question": "How much sunlight do chives need?",
+    "answer": "Chives require full sun, with at least 6 hours of direct sunlight daily. In hot climates, they may tolerate partial shade but will produce the best growth and flavor in full sunlight."
+  },
+  {
+    "question": "What pests affect tarragon plants?",
+    "answer": "Tarragon is relatively pest-resistant but can be affected by rust, a fungal disease that causes orange or brown spots on the leaves. Prevent rust by ensuring good air circulation and avoiding water on the leaves."
+  },
+  {
+    "question": "What are the water requirements for lemon balm?",
+    "answer": "Lemon balm prefers moderately moist soil, so water it regularly, especially in hot or dry weather. Avoid waterlogged conditions, but don't let the soil dry out completely between waterings."
+  },
+  {
+    "question": "What type of soil is best for fennel?",
+    "answer": "Fennel grows best in loamy, well-drained soil with plenty of organic matter. It prefers slightly acidic to neutral pH levels (6.0-7.0) and needs space to spread, so avoid overcrowding."
+  },
+  {
+    "question": "What pests affect bay laurel plants?",
+    "answer": "Bay laurel is prone to infestations of spider mites, which can cause yellowing and webbing on the leaves. To control these pests, use insecticidal soap or neem oil and provide good air circulation."
+  },
+  {
+    "question": "How much sunlight does lovage need?",
+    "answer": "Lovage thrives in full sun, requiring at least 6-8 hours of direct sunlight daily. It can tolerate partial shade but will grow taller and stronger with more sunlight exposure."
+  },
+  {
+    "question": "What type of soil is best for peach trees?",
+    "answer": "Peach trees prefer well-drained, loamy soil with a slightly acidic to neutral pH (6.0-7.0). They benefit from organic matter such as compost or manure, which improves soil fertility and moisture retention."
+  },
+  {
+    "question": "How much water does spinach need?",
+    "answer": "Spinach requires consistently moist soil to grow well. Water it regularly, keeping the soil evenly moist but not waterlogged. In hot weather, additional watering may be necessary to prevent bolting."
+  },
+  {
+    "question": "What pests affect lettuce plants?",
+    "answer": "Lettuce is commonly affected by aphids, which can cause curled, yellow leaves. Other pests include slugs and snails. Using insecticidal soap or planting companion plants like marigolds can help reduce aphid populations."
+  },
+  {
+    "question": "What type of soil is best for carrots?",
+    "answer": "Carrots grow best in loose, sandy soil that is well-drained and free of rocks or compacted areas. The soil should be slightly acidic to neutral (pH 6.0-7.0). Before planting, till the soil to a depth of 12-18 inches for optimal root development."
+  },
+  {
+    "question": "How much water do radishes need?",
+    "answer": "Radishes prefer evenly moist soil. Water them regularly, ensuring the soil stays consistently damp but not waterlogged. Uneven watering can cause the roots to become tough or split."
+  },
+  {
+    "question": "How often should I water a bonsai tree?",
+    "answer": "Bonsai trees require frequent watering, as they have limited soil and tend to dry out quickly. Water them when the top inch of soil feels dry, typically every 1-3 days, depending on the climate and species."
+  },
+  {
+    "question": "What kind of light does a fig tree need?",
+    "answer": "Fig trees thrive in full sun, requiring at least 6-8 hours of direct sunlight daily. In areas with hot summers, they may benefit from some afternoon shade, but too little sun will reduce fruit production."
+  },
+  {
+    "question": "What pests affect citrus plants?",
+    "answer": "Citrus plants are susceptible to aphids, spider mites, and scale insects, which can cause yellowing leaves and reduced fruit production. Horticultural oils or insecticidal soaps are effective in controlling these pests."
+  },
+  {
+    "question": "How much sunlight do apple trees need?",
+    "answer": "Apple trees require full sun, with at least 6 hours of direct sunlight daily. Full sun promotes healthy growth, fruit production, and disease resistance. They should be planted in an area with good air circulation to prevent fungal diseases."
+  },
+  {
+    "question": "What type of soil is best for blackberry bushes?",
+    "answer": "Blackberries thrive in well-drained, loamy soil with a slightly acidic to neutral pH (5.5-7.0). They prefer soils rich in organic matter, which helps retain moisture and provides essential nutrients for fruit production."
+  },
+  {
+    "question": "How often should strawberries be watered?",
+    "answer": "Strawberries need consistent moisture, especially during fruiting. Water them deeply about 1-2 inches per week, ensuring the soil stays moist but not waterlogged. Drip irrigation or soaker hoses work well for even watering."
+  },
+  {
+    "question": "What pests affect grapevines?",
+    "answer": "Grapevines are often affected by grape leafhoppers, which cause yellowing and stippling of leaves. They can also suffer from spider mites and powdery mildew. Use neem oil or insecticidal soap to control pests."
+  },
+  {
+    "question": "What type of soil is best for raspberry bushes?",
+    "answer": "Raspberry bushes prefer well-drained, loamy soil rich in organic matter. A slightly acidic to neutral pH (5.5-7.0) is ideal. Avoid heavy clay or waterlogged soils, which can cause root rot and poor growth."
+  },
+  {
+    "question": "How much water do cucumber plants need?",
+    "answer": "Cucumbers require consistent watering, especially during fruiting. Provide 1-2 inches of water per week, keeping the soil evenly moist but well-drained. Mulching can help retain moisture and prevent uneven watering."
+  },
+  {
+    "question": "What pests affect zucchini plants?",
+    "answer": "Zucchini plants are susceptible to squash bugs, which feed on the leaves and stems, causing wilting. Other pests include cucumber beetles and aphids. Companion planting with marigolds and regular monitoring can help control infestations."
+  },
+  {
+    "question": "What type of soil is best for pumpkin plants?",
+    "answer": "Pumpkins grow best in rich, well-draining soil with plenty of organic matter. A slightly acidic to neutral pH (6.0-7.5) is ideal. Pumpkins also require ample space and fertile soil, so consider amending the soil with compost or manure before planting."
+  },
+  {
+    "question": "How much sunlight do watermelon plants need?",
+    "answer": "Watermelon plants require full sun, with at least 8-10 hours of direct sunlight daily. Full sun promotes vigorous growth and sweeter, more flavorful fruit. Choose a sunny location with well-drained soil for best results."
+  },
+  {
+    "question": "What pests affect melons?",
+    "answer": "Melons are commonly affected by aphids, which feed on the leaves and transmit diseases like mosaic virus. Other pests include cucumber beetles and spider mites. Neem oil and insecticidal soap can help control these pests."
+  },
+  {
+    "question": "What type of soil is best for squash plants?",
+    "answer": "Squash plants prefer well-drained, fertile soil rich in organic matter. A slightly acidic to neutral pH (6.0-7.5) is ideal. Before planting, amend the soil with compost or aged manure to improve fertility and moisture retention."
+  },
+  {
+    "question": "How much water do sweet potato plants need?",
+    "answer": "Sweet potatoes require consistent moisture, especially during their early growth stages. Water them deeply, about 1-2 inches per week, keeping the soil evenly moist but not waterlogged. Mulching can help conserve moisture."
+  },
+  {
+    "question": "What pests affect potato plants?",
+    "answer": "Potato plants are susceptible to Colorado potato beetles, which feed on the leaves and reduce yields. They can also be affected by aphids, which transmit viral diseases. Use neem oil or insecticidal soap to control these pests."
+  },
+  {
+    "question": "How often should I water onion plants?",
+    "answer": "Onion plants require consistent moisture, especially during bulb formation. Water them regularly, about 1 inch per week, keeping the soil evenly moist but not waterlogged. Overwatering can lead to rot, so ensure proper drainage."
+  },
+  {
+    "question": "What type of soil is best for garlic?",
+    "answer": "Garlic grows best in well-draining, sandy or loamy soil with a slightly acidic to neutral pH (6.0-7.0). It prefers fertile soil rich in organic matter, so amend the soil with compost or manure before planting."
+  },
+  {
+    "question": "What pests affect ginger plants?",
+    "answer": "Ginger plants can be affected by root-knot nematodes, which cause stunted growth and yellowing leaves. Other pests include aphids and spider mites. Regularly inspect the plant and use neem oil or insecticidal soap to control infestations."
+  },
+  {
+    "question": "What type of soil is best for kale?",
+    "answer": "Kale grows best in rich, well-drained soil with plenty of organic matter. It prefers a slightly acidic to neutral pH (6.0-7.0). Amending the soil with compost or aged manure improves its nutrient content and moisture retention."
+  },
+  {
+    "question": "How much water do turnip plants need?",
+    "answer": "Turnip plants require moderate watering. Water them regularly, about 1 inch per week, keeping the soil evenly moist but not waterlogged. Too little water can lead to woody, tough roots, while overwatering can cause rot."
+  },
+  {
+    "question": "What pests affect radish plants?",
+    "answer": "Radish plants are susceptible to flea beetles, which cause small holes in the leaves. Aphids and root maggots can also be problematic. Use row covers and insecticidal soap to prevent infestations and protect your plants."
+  },
+  {
+    "question": "What type of soil is best for asparagus?",
+    "answer": "Asparagus prefers well-drained, sandy soil with a slightly acidic to neutral pH (6.5-7.0). It grows best in soil rich in organic matter, so amend with compost or manure before planting to ensure healthy, vigorous growth."
+  },
+  {
+    "question": "How much sunlight do Brussels sprouts need?",
+    "answer": "Brussels sprouts require full sun, with at least 6-8 hours of direct sunlight daily. Full sun promotes strong, healthy plants and helps the sprouts develop tight, firm heads."
+  },
+  {
+    "question": "What pests affect cabbage plants?",
+    "answer": "Cabbage plants are commonly affected by cabbage worms, which chew large holes in the leaves. Other pests include aphids, flea beetles, and slugs. Use row covers, neem oil, or insecticidal soap to protect cabbage plants."
+  },
+  {
+    "question": "What type of soil is best for broccoli?",
+    "answer": "Broccoli thrives in well-drained, fertile soil with plenty of organic matter. It prefers a slightly acidic to neutral pH (6.0-7.0). Amending the soil with compost or aged manure before planting helps promote healthy growth."
+  },
+  {
+    "question": "How often should I water cauliflower?",
+    "answer": "Cauliflower requires consistent moisture, especially during head formation. Water it regularly, about 1 inch per week, keeping the soil evenly moist but not waterlogged. Mulching can help retain moisture and prevent drying out."
+  },
+  {
+    "question": "What pests affect celery plants?",
+    "answer": "Celery plants are often affected by aphids, which cause yellowing leaves and stunted growth. Other pests include spider mites and leaf miners. Use neem oil or insecticidal soap to control infestations and ensure healthy plants."
+  },
+  {
+    "question": "What type of soil is best for leeks?",
+    "answer": "Leeks grow best in well-drained, fertile soil rich in organic matter. They prefer a slightly acidic to neutral pH (6.0-7.0). Before planting, amend the soil with compost or aged manure to improve nutrient content and moisture retention."
+  },
+  {
+    "question": "How much water do parsnip plants need?",
+    "answer": "Parsnip plants require moderate watering. Water them regularly, ensuring the soil stays evenly moist but not waterlogged. Too little water can cause the roots to become woody, while overwatering can lead to rot."
+  },
+  {
+    "question": "What pests affect beets?",
+    "answer": "Beets are commonly affected by leaf miners, which tunnel through the leaves and cause damage. Aphids and flea beetles can also be problematic. Use row covers and insecticidal soap to control infestations and protect your beet crop."
+  },
+  {
+    "question": "How much sunlight does rhubarb need?",
+    "answer": "Rhubarb requires full sun, with at least 6-8 hours of direct sunlight daily. Full sun promotes vigorous growth and helps the plant produce large, healthy stalks. In hot climates, some afternoon shade may be beneficial."
+  },
+  {
+    "question": "What type of soil is best for artichokes?",
+    "answer": "Artichokes prefer well-drained, sandy or loamy soil with a slightly acidic to neutral pH (6.5-7.0). The soil should be rich in organic matter, so amend with compost or aged manure before planting to ensure healthy growth."
+  },
+  {
+    "question": "How much water do eggplant plants need?",
+    "answer": "Eggplant plants require regular watering, particularly during flowering and fruiting. Water them deeply, about 1-2 inches per week, keeping the soil evenly moist but not waterlogged. Mulching can help retain moisture and prevent drying out."
+  },
+  {
+    "question": "What pests affect pepper plants?",
+    "answer": "Pepper plants are susceptible to aphids, which cause curled leaves and stunted growth. Other pests include spider mites, flea beetles, and thrips. Use neem oil or insecticidal soap to control these pests and ensure healthy plants."
+  },
+  {
+    "question": "What type of soil is best for kohlrabi?",
+    "answer": "Kohlrabi grows best in well-drained, fertile soil rich in organic matter. It prefers a slightly acidic to neutral pH (6.0-7.0). Amending the soil with compost or aged manure before planting promotes healthy, vigorous growth."
+  },
+  {
+    "question": "How often should I water okra plants?",
+    "answer": "Okra plants require regular watering, particularly during flowering and pod formation. Water them deeply, about 1-2 inches per week, ensuring the soil stays evenly moist but well-drained. Mulching can help retain moisture and prevent drying out."
+  },
+  {
+    "question": "What pests affect peas?",
+    "answer": "Peas are commonly affected by aphids, which cause curled, yellow leaves. Other pests include pea weevils and leaf miners. Use neem oil or insecticidal soap to control these pests and ensure a healthy pea crop."
+  },
+  {
+    "question": "What type of soil is best for beans?",
+    "answer": "Beans grow best in well-drained, loamy soil rich in organic matter. They prefer a slightly acidic to neutral pH (6.0-7.5). Before planting, amend the soil with compost or aged manure to improve its fertility and moisture retention."
+  },
+  {
+    "question": "How much water do chickpea plants need?",
+    "answer": "Chickpea plants require moderate watering, particularly during flowering and pod formation. Water them deeply, about 1 inch per week, ensuring the soil stays evenly moist but not waterlogged."
+  }
+]

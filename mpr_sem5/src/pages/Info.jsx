@@ -22,8 +22,6 @@ import {
 import { styled } from '@mui/system';
 import SearchIcon from '@mui/icons-material/Search';
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer'; // Assume you have a footer component
 
 const theme = createTheme({
   palette: {
@@ -99,7 +97,6 @@ const Info = () => {
   return (
     <>
       <CssBaseline />
-      <Navbar />
       <ThemeProvider theme={theme}>
         <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
           <Container maxWidth="md" sx={{ py: 4 }}>
@@ -157,7 +154,6 @@ const Info = () => {
             </Grid>
           </Container>
         </Box>
-          <Footer />
       </ThemeProvider>
     </>
   );

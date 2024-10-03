@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 import { Box, TextField, Button, Typography, List, ListItem, Paper, Avatar } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SendIcon from '@mui/icons-material/Send';
@@ -42,8 +43,8 @@ const Chatbot = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  const handleSendMessage = (e) => {
-    e.preventDefault(); 
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
     if (inputText.trim() === '') return;
 
     const newMessage = {
@@ -51,13 +52,28 @@ const Chatbot = () => {
       text: inputText,
     };
 
-    const botResponse = {
-      sender: 'bot',
-      text: 'This is a predefined response from the bot.',
-    };
-
-    setMessages(prevMessages => [...prevMessages, newMessage, botResponse]);
+    setMessages(prevMessages => [...prevMessages, newMessage]);
     setInputText('');
+
+    try {
+      const response = await axios.post('http://localhost:5000/generate_response', {
+        input_text: inputText
+      });
+
+      const botResponse = {
+        sender: 'bot',
+        text: response.data.response,
+      };
+
+      setMessages(prevMessages => [...prevMessages, botResponse]);
+    } catch (error) {
+      console.error('Error fetching response:', error);
+      const errorResponse = {
+        sender: 'bot',
+        text: 'Sorry, I encountered an error while processing your request.',
+      };
+      setMessages(prevMessages => [...prevMessages, errorResponse]);
+    }
   };
 
   return (

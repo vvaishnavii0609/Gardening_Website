@@ -62,7 +62,7 @@ const Navbar = () => {
               <LocalFloristIcon fontSize="large" />
             </IconButton>
             <Title variant="h5">
-              Gardening Website
+              Garden Of Eden
             </Title>
           </Logo>
           <NavLinks>
