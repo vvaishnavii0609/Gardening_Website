@@ -7,6 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+backend/Chatbot/improved_model.keras
+
 node_modules
 dist
 dist-ssr

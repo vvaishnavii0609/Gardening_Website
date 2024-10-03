@@ -56,7 +56,7 @@ const Chatbot = () => {
     setInputText('');
 
     try {
-      const response = await axios.post('http://localhost:5000/generate_response', {
+      const response = await axios.post('http://localhost:3000/generate_response', {
         input_text: inputText
       });
 
