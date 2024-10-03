@@ -9,7 +9,6 @@ import pickle
 app = Flask(__name__)
 CORS(app)
 
-# MongoDB configuration
 app.config["MONGO_URI"] = "mongodb://localhost:27017/Mpr_sem5"
 mongo = PyMongo(app)
 

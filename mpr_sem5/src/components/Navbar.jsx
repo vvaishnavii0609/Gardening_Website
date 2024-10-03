@@ -72,7 +72,9 @@ const Navbar = () => {
             <Link to={"/info"} style={{ textDecoration: 'none' }}>
               <StyledButton startIcon={<InfoIcon />}>Info</StyledButton>
             </Link>
-            <StyledButton startIcon={<AssignmentIcon />}>About</StyledButton>
+            <Link to={"/chatbot"} style={{ textDecoration: 'none' }}>
+            <StyledButton startIcon={<AssignmentIcon />}>Chatbot</StyledButton>
+            </Link>
             <StyledButton startIcon={<YardIcon />}>Services</StyledButton>
           </NavLinks>
         </StyledToolbar>

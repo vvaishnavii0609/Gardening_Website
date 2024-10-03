@@ -33,6 +33,15 @@ app.post('/api/plants', async (req, res) => {
   }
 });
 
+app.get('/api/plants', async (req, res) => {
+  try {
+    const plants = await Plant.find();
+    res.json(plants);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching plants', error: error.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
