@@ -6,6 +6,7 @@ import Upload from './pages/Upload'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Services from './pages/Services'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/info' element={<Info/>}/>
       <Route path='/upload' element={<Upload/>}/>
       <Route path='/' element={<Home/>}/>
+      <Route path='/services' element={<Services/>}/>
       </Routes>
       <Footer/>
     </Router>

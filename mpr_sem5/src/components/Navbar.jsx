@@ -75,7 +75,9 @@ const Navbar = () => {
             <Link to={"/chatbot"} style={{ textDecoration: 'none' }}>
             <StyledButton startIcon={<AssignmentIcon />}>Chatbot</StyledButton>
             </Link>
+            <Link to={"/services"} style={{ textDecoration: 'none' }}>
             <StyledButton startIcon={<YardIcon />}>Services</StyledButton>
+            </Link>
           </NavLinks>
         </StyledToolbar>
       </StyledAppBar>
