@@ -101,7 +101,7 @@ const Chatbot = () => {
 
       const botResponse = {
         sender: 'bot',
-        text: response.data.response,
+        text: typeof response.data.response === 'string' ? response.data.response : JSON.stringify(response.data.response),
       };
 
       setMessages(prevMessages => [...prevMessages, botResponse]);
@@ -288,15 +288,32 @@ const Chatbot = () => {
                       }}
                     >
                       <Typography 
+                        component="div"
                         sx={{
                           color: message.sender === 'user' ? 'primary.contrastText' : 'secondary.contrastText',
                           fontSize: '0.95rem',
-                          lineHeight: 1.4,
+                          lineHeight: 1.6,
                           wordBreak: 'break-word',
+                          whiteSpace: 'pre-line',
+                          '& strong': {
+                            fontWeight: 600,
+                          },
+                          '& ul': {
+                            margin: '8px 0',
+                            paddingLeft: '20px',
+                          },
+                          '& li': {
+                            margin: '4px 0',
+                          },
                         }}
-                      >
-                        {message.text}
-                      </Typography>
+                        dangerouslySetInnerHTML={{
+                          __html: message.text
+                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                            .replace(/•\s*/g, '• ')
+                            .replace(/(\d+\.\s)/g, '<br>$1')
+                            .replace(/\n/g, '<br>')
+                        }}
+                      />
                     </Paper>
                   </Box>
                 </ListItem>

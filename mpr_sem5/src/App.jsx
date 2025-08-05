@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Services from './pages/Services'
+import PlantIdentification from './pages/PlantIdentification'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Route path='/upload' element={<Upload/>}/>
       <Route path='/' element={<Home/>}/>
       <Route path='/services' element={<Services/>}/>
+      <Route path='/plant-identification' element={<PlantIdentification/>}/>
       </Routes>
       <Footer/>
     </Router>

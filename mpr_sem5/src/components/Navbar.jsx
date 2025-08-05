@@ -11,6 +11,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import YardIcon from '@mui/icons-material/Yard';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import UploadIcon from '@mui/icons-material/Upload';
 
 const Root = styled('div')(({ theme }) => ({
   flexGrow: 1,
@@ -77,6 +79,12 @@ const Navbar = () => {
             </Link>
             <Link to={"/services"} style={{ textDecoration: 'none' }}>
             <StyledButton startIcon={<YardIcon />}>Services</StyledButton>
+            </Link>
+            <Link to={"/plant-identification"} style={{ textDecoration: 'none' }}>
+            <StyledButton startIcon={<CameraAltIcon />}>Plant ID</StyledButton>
+            </Link>
+            <Link to={"/upload"} style={{ textDecoration: 'none' }}>
+            <StyledButton startIcon={<UploadIcon />}>Upload</StyledButton>
             </Link>
           </NavLinks>
         </StyledToolbar>
