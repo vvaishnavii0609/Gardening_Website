@@ -1,3 +1,5 @@
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -194,36 +196,40 @@ app.get('/api/plants', async (req, res) => {
 });
 
 // Plant identification endpoint
-app.post('/api/identify-plant', async (req, res) => {
+app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
   try {
-    const { image } = req.body;
-    
-    if (!image) {
-      return res.status(400).json({ error: 'Image is required' });
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: "No image uploaded" });
     }
-    
-    // Call Python plant identification service
-    const pythonProcess = spawn('python', ['ml/plantIdentification.py']);
-    
-    pythonProcess.stdin.write(JSON.stringify({ image }));
+
+    console.log("Uploaded file:", req.file);
+
+    // Call Python plant identification service, pass file path
+    const pythonProcess = spawn("python", ["ml/plantIdentification.py"]);
+
+    pythonProcess.stdin.write(JSON.stringify({ imagePath: req.file.path }));
     pythonProcess.stdin.end();
-    
-    let result = '';
-    pythonProcess.stdout.on('data', (data) => {
+
+    let result = "";
+    pythonProcess.stdout.on("data", (data) => {
       result += data.toString();
     });
-    
-    pythonProcess.on('close', (code) => {
+
+    pythonProcess.on("close", (code) => {
       if (code === 0) {
-        const identification = JSON.parse(result);
-        res.json(identification);
+        try {
+          const identification = JSON.parse(result);
+          res.json(identification);
+        } catch (err) {
+          res.status(500).json({ success: false, message: "Invalid Python output" });
+        }
       } else {
-        res.status(500).json({ error: 'Plant identification failed' });
+        res.status(500).json({ success: false, message: "Plant identification failed" });
       }
     });
   } catch (error) {
-    console.error('Plant identification error:', error);
-    res.status(500).json({ error: 'Plant identification failed' });
+    console.error("Plant identification error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 

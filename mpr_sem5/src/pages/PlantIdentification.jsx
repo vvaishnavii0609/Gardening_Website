@@ -33,7 +33,8 @@ const PlantIdentification = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showHealthDialog, setShowHealthDialog] = useState(false);
-  
+  const [previewImage, setPreviewImage] = useState(null);
+
   const fileInputRef = useRef();
   const videoRef = useRef();
   const canvasRef = useRef();
@@ -41,16 +42,20 @@ const PlantIdentification = () => {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
+      setSelectedImage(file); // Store file directly
+      setIdentification(null);
+      setHealthAnalysis(null);
+      setError(null);
+  
       const reader = new FileReader();
       reader.onload = (e) => {
-        setSelectedImage(e.target.result);
-        setIdentification(null);
-        setHealthAnalysis(null);
-        setError(null);
+        // Optional: Keep a preview
+        setPreviewImage(e.target.result);
       };
       reader.readAsDataURL(file);
     }
   };
+  
 
   const captureImage = () => {
     const video = videoRef.current;
@@ -79,22 +84,40 @@ const PlantIdentification = () => {
 
   const identifyPlant = async () => {
     if (!selectedImage) return;
-    
+  
     setLoading(true);
     setError(null);
-    
+  
     try {
-      const response = await axios.post('http://localhost:3000/api/identify-plant', {
-        image: selectedImage
-      });
-      
+      const formData = new FormData();
+  
+      if (selectedImage instanceof File) {
+        // File from file input
+        formData.append("image", selectedImage);
+      } else if (typeof selectedImage === "string" && selectedImage.startsWith("data:image")) {
+        // Base64 from camera
+        const res = await fetch(selectedImage);
+        const blob = await res.blob();
+        formData.append("image", blob, "plant.jpg");
+      } else {
+        throw new Error("Invalid image format");
+      }
+  
+      const response = await axios.post(
+        "http://localhost:3000/api/identify-plant",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+  
       setIdentification(response.data);
     } catch (err) {
-      setError('Plant identification failed');
+      console.error(err);
+      setError("Plant identification failed");
     } finally {
       setLoading(false);
     }
   };
+  
 
   const analyzeHealth = async () => {
     if (!selectedImage) return;
@@ -185,10 +208,10 @@ const PlantIdentification = () => {
               </Box>
               
               {/* Selected Image */}
-              {selectedImage && (
+              {previewImage && (
                 <Box sx={{ mt: 2 }}>
                   <img
-                    src={selectedImage}
+                    src={previewImage}
                     alt="Selected plant"
                     style={{ width: '100%', maxWidth: 400, borderRadius: 8 }}
                   />
