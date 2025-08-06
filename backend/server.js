@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { spawn } = require('child_process');
@@ -34,7 +35,37 @@ const plantSchema = new mongoose.Schema({
 const Plant = mongoose.model('Plant', plantSchema);
 
 app.use(cors()); 
-app.use(express.json({ limit: '50mb' })); 
+app.use(express.json({ limit: '50mb' }));
+
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = path.join(__dirname, 'uploads');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ 
+  storage: storage,
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB limit
+  },
+  fileFilter: function (req, file, cb) {
+    // Accept images only
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+}); 
 
 // Load chatbot responses
 const responsesPath = path.join(__dirname, 'responses.json');
@@ -193,19 +224,36 @@ app.get('/api/plants', async (req, res) => {
   }
 });
 
-// Plant identification endpoint
-app.post('/api/identify-plant', async (req, res) => {
+// Plant identification endpoint - handles both file uploads and base64 images
+app.post('/api/identify-plant', upload.single("image"), async (req, res) => {
   try {
-    const { image } = req.body;
+    let imageData;
     
-    if (!image) {
-      return res.status(400).json({ error: 'Image is required' });
+    // Handle file upload (from main branch)
+    if (req.file) {
+      console.log("Uploaded file:", req.file);
+      imageData = req.file.path; // Use file path for uploaded files
+    } 
+    // Handle base64 image (from request body)
+    else if (req.body.image) {
+      imageData = req.body.image; // Use base64 data directly
+    } 
+    else {
+      return res.status(400).json({ 
+        success: false, 
+        message: "No image uploaded or provided" 
+      });
     }
     
     // Call Python plant identification service
     const pythonProcess = spawn('python3', ['ml/plantIdentification.py']);
     
-    pythonProcess.stdin.write(JSON.stringify({ image }));
+    // Send appropriate data based on input type
+    const inputData = req.file 
+      ? { imagePath: imageData }  // File path for uploaded files
+      : { image: imageData };     // Base64 for direct image data
+    
+    pythonProcess.stdin.write(JSON.stringify(inputData));
     pythonProcess.stdin.end();
     
     let result = '';
@@ -220,40 +268,67 @@ app.post('/api/identify-plant', async (req, res) => {
           res.json(identification);
         } catch (parseError) {
           console.error('Failed to parse Python response:', result);
-          res.status(500).json({ error: 'Invalid response from identification service' });
+          res.status(500).json({ 
+            success: false, 
+            message: "Invalid response from identification service" 
+          });
         }
       } else {
         console.error('Python process exited with code:', code);
-        res.status(500).json({ error: 'Plant identification failed' });
+        res.status(500).json({ 
+          success: false, 
+          message: "Plant identification failed" 
+        });
       }
     });
 
     pythonProcess.on('error', (error) => {
       console.error('Python process error:', error);
-      res.status(500).json({ error: 'Failed to start identification service' });
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to start identification service" 
+      });
     });
   } catch (error) {
-    console.error('Plant identification error:', error);
-    res.status(500).json({ error: 'Plant identification failed' });
+    console.error("Plant identification error:", error);
+    res.status(500).json({ 
+      success: false, 
+      message: "Server error" 
+    });
   }
 });
 
-// Plant health analysis endpoint
-app.post('/api/analyze-health', async (req, res) => {
+// Plant health analysis endpoint - handles both file uploads and base64 images
+app.post('/api/analyze-health', upload.single("image"), async (req, res) => {
   try {
-    const { image } = req.body;
+    let imageData;
     
-    if (!image) {
-      return res.status(400).json({ error: 'Image is required' });
+    // Handle file upload
+    if (req.file) {
+      console.log("Uploaded file for health analysis:", req.file);
+      imageData = req.file.path;
+    } 
+    // Handle base64 image
+    else if (req.body.image) {
+      imageData = req.body.image;
+    } 
+    else {
+      return res.status(400).json({ 
+        success: false, 
+        message: "No image uploaded or provided" 
+      });
     }
     
     // Call Python health analysis service
     const pythonProcess = spawn('python3', ['ml/plantIdentification.py']);
     
-    pythonProcess.stdin.write(JSON.stringify({ 
+    // Send appropriate data based on input type
+    const inputData = {
       action: 'analyze_health',
-      image 
-    }));
+      ...(req.file ? { imagePath: imageData } : { image: imageData })
+    };
+    
+    pythonProcess.stdin.write(JSON.stringify(inputData));
     pythonProcess.stdin.end();
     
     let result = '';

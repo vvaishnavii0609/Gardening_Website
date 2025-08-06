@@ -37,9 +37,19 @@ class PlantIdentificationSystem:
         
         return plant_classes
     
-    def preprocess_image(self, image_data):
-        """Mock preprocessing - returns True if image data exists"""
+    def preprocess_image(self, image_data, image_path=None):
+        """Mock preprocessing - returns True if image data or path exists"""
         try:
+            # Handle file path (from uploaded files)
+            if image_path and isinstance(image_path, str):
+                import os
+                if os.path.exists(image_path):
+                    return True
+                else:
+                    print(f"Image file not found: {image_path}", file=sys.stderr)
+                    return None
+            
+            # Handle base64 or direct image data
             if isinstance(image_data, str) and len(image_data) > 0:
                 return True
             return None
@@ -47,11 +57,11 @@ class PlantIdentificationSystem:
             print(f"Error preprocessing image: {e}", file=sys.stderr)
             return None
     
-    def identify_plant(self, image_data):
+    def identify_plant(self, image_data, image_path=None):
         """Mock plant identification"""
         try:
             # Mock preprocessing
-            processed_image = self.preprocess_image(image_data)
+            processed_image = self.preprocess_image(image_data, image_path)
             if processed_image is None:
                 return {'error': 'Failed to process image'}
             
@@ -83,7 +93,7 @@ class PlantIdentificationSystem:
         except Exception as e:
             return {'error': f'Identification failed: {str(e)}'}
     
-    def analyze_plant_health(self, image_data):
+    def analyze_plant_health(self, image_data, image_path=None):
         """Mock plant health analysis"""
         try:
             # Mock health analysis
@@ -135,10 +145,14 @@ if __name__ == "__main__":
         # Create plant identification system
         plant_id = PlantIdentificationSystem()
         
+        # Extract image data and path
+        image_data = data.get('image', '')
+        image_path = data.get('imagePath', None)
+        
         if data.get('action') == 'analyze_health':
-            result = plant_id.analyze_plant_health(data.get('image', ''))
+            result = plant_id.analyze_plant_health(image_data, image_path)
         else:
-            result = plant_id.identify_plant(data.get('image', ''))
+            result = plant_id.identify_plant(image_data, image_path)
         
         # Output result as JSON
         print(json.dumps(result))
