@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { spawn } = require('child_process');
@@ -39,9 +40,37 @@ mongoose.connect(mongoURI)
 // const Plant = mongoose.model('Plant', plantSchema);
 
 app.use(cors()); 
-app.use(express.json({ limit: '50mb' })); 
-// Serve uploaded images statically
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.json({ limit: '50mb' }));
+
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = path.join(__dirname, 'uploads');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ 
+  storage: storage,
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB limit
+  },
+  fileFilter: function (req, file, cb) {
+    // Accept images only
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+}); 
 
 // Load chatbot responses
 const responsesPath = path.join(__dirname, 'responses.json');
@@ -307,7 +336,7 @@ app.get('/api/plants', async (req, res) => {
 });
 
 // Plant identification endpoint - handles both file uploads and base64 images
-app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
+app.post('/api/identify-plant', upload.single("image"), async (req, res) => {
   try {
     let imageData;
     
@@ -318,18 +347,7 @@ app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
     } 
     // Handle base64 image (from request body)
     else if (req.body.image) {
-      // Base64 string -> write to temp file in uploads
-      try {
-        const base64Data = req.body.image.replace(/^data:image\/[a-zA-Z]+;base64,/, '');
-        const buffer = Buffer.from(base64Data, 'base64');
-        const fileName = `plant_${Date.now()}.jpg`;
-        const filePath = path.join(__dirname, 'uploads', fileName);
-        fs.writeFileSync(filePath, buffer);
-        imageData = filePath;
-      } catch (e) {
-        console.error('Failed to write base64 image:', e);
-        return res.status(400).json({ success: false, message: 'Invalid image data' });
-      }
+      imageData = req.body.image; // Use base64 data directly
     } 
     else {
       return res.status(400).json({ 
@@ -342,7 +360,9 @@ app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
     const pythonProcess = spawn('python', ['ml/plantIdentification.py']);
     
     // Send appropriate data based on input type
-    const inputData = { imagePath: imageData };
+    const inputData = req.file 
+      ? { imagePath: imageData }  // File path for uploaded files
+      : { image: imageData };     // Base64 for direct image data
     
     pythonProcess.stdin.write(JSON.stringify(inputData));
     pythonProcess.stdin.end();
@@ -388,22 +408,38 @@ app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
     });
   }
 });
-// Plant health analysis endpoint
-app.post('/api/analyze-health', async (req, res) => {
+
+// Plant health analysis endpoint - handles both file uploads and base64 images
+app.post('/api/analyze-health', upload.single("image"), async (req, res) => {
   try {
-    const { image } = req.body;
+    let imageData;
     
-    if (!image) {
-      return res.status(400).json({ error: 'Image is required' });
+    // Handle file upload
+    if (req.file) {
+      console.log("Uploaded file for health analysis:", req.file);
+      imageData = req.file.path;
+    } 
+    // Handle base64 image
+    else if (req.body.image) {
+      imageData = req.body.image;
+    } 
+    else {
+      return res.status(400).json({ 
+        success: false, 
+        message: "No image uploaded or provided" 
+      });
     }
     
     // Call Python health analysis service
     const pythonProcess = spawn('python', ['ml/plantIdentification.py']);
     
-    pythonProcess.stdin.write(JSON.stringify({ 
+    // Send appropriate data based on input type
+    const inputData = {
       action: 'analyze_health',
-      image 
-    }));
+      ...(req.file ? { imagePath: imageData } : { image: imageData })
+    };
+    
+    pythonProcess.stdin.write(JSON.stringify(inputData));
     pythonProcess.stdin.end();
     
     let result = '';
