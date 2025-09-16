@@ -1,3 +1,5 @@
+console.log("✅ Loaded Plant schema from:", __filename);
+
 const mongoose = require('mongoose');
 
 const plantSchema = new mongoose.Schema({
@@ -21,18 +23,18 @@ const plantSchema = new mongoose.Schema({
     default: 'Moderate',
     index: true 
   },
-  sunlight: { 
-    type: String, 
-    enum: ['Low light', 'Bright indirect', 'Full sun', 'Partial shade'],
-    default: 'Bright indirect',
-    index: true 
-  },
+sunlight: { 
+  type: String, 
+  enum: ['Low light', 'Bright indirect', 'Full sun', 'Partial shade'],
+  default: 'Bright indirect',
+  index: true 
+},
+
   temperature: {
     min: Number,
     max: Number,
-    range: String,
-    index: true
-  },
+    range: { type: String, index: true }
+},
   humidity: {
     type: String,
     enum: ['Low', 'Moderate', 'High'],
@@ -87,30 +89,29 @@ const plantSchema = new mongoose.Schema({
     frostTolerant: { type: Boolean, default: false }
   },
   
-  // Detailed Care Instructions
-  careInstructions: {
-    watering: {
-      frequency: String,
-      method: String,
-      tips: [String]
-    },
-    fertilizing: {
-      frequency: String,
-      type: String,
-      tips: [String]
-    },
-    pruning: {
-      frequency: String,
-      method: String,
-      tips: [String]
-    },
-    repotting: {
-      frequency: String,
-      method: String,
-      tips: [String]
-    }
+careInstructions: {
+  watering: {
+    frequency: String,
+    method: String,
+    tips: [String]
   },
-  
+  sunlight: String,
+  fertilizing: {
+    frequency: String,
+    type: String,
+    tips: [String]
+  }
+},
+  pruning: {
+    frequency: String,
+    method: String,
+    tips: [String]
+  },
+  repotting: {
+    frequency: String,
+    method: String,
+    tips: [String]
+  },
   // Problems & Solutions
   commonProblems: [{
     problem: String,
