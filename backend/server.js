@@ -1,5 +1,3 @@
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -196,34 +194,26 @@ app.get('/api/plants', async (req, res) => {
 });
 
 // Plant identification endpoint
-app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
+app.post('/api/identify-plant', async (req, res) => {
   try {
-    if (!req.file) {
-      return res.status(400).json({ success: false, message: "No image uploaded" });
+    const { image } = req.body;
+    
+    if (!image) {
+      return res.status(400).json({ error: 'Image is required' });
     }
-<<<<<<< HEAD
-
-    console.log("Uploaded file:", req.file);
-
-    // Call Python plant identification service, pass file path
-    const pythonProcess = spawn("python", ["ml/plantIdentification.py"]);
-
-    pythonProcess.stdin.write(JSON.stringify({ imagePath: req.file.path }));
-=======
     
     // Call Python plant identification service
     const pythonProcess = spawn('python3', ['ml/plantIdentification.py']);
     
     pythonProcess.stdin.write(JSON.stringify({ image }));
->>>>>>> 6c7517c (Refactor plant identification to mock ML service and improve error handling)
     pythonProcess.stdin.end();
-
-    let result = "";
-    pythonProcess.stdout.on("data", (data) => {
+    
+    let result = '';
+    pythonProcess.stdout.on('data', (data) => {
       result += data.toString();
     });
-
-    pythonProcess.on("close", (code) => {
+    
+    pythonProcess.on('close', (code) => {
       if (code === 0) {
         try {
           const identification = JSON.parse(result);
@@ -231,8 +221,10 @@ app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
         } catch (parseError) {
           console.error('Failed to parse Python response:', result);
           res.status(500).json({ error: 'Invalid response from identification service' });
-        }
+        } 
       } else {
+        console.error('Python process exited with code:', code);
+        res.status(500).json({ error: 'Plant identification failed' });
         console.error('Python process exited with code:', code);
         res.status(500).json({ error: 'Plant identification failed' });
       }
@@ -242,9 +234,14 @@ app.post("/api/identify-plant", upload.single("image"), async (req, res) => {
       console.error('Python process error:', error);
       res.status(500).json({ error: 'Failed to start identification service' });
     });
+
+    pythonProcess.on('error', (error) => {
+      console.error('Python process error:', error);
+      res.status(500).json({ error: 'Failed to start identification service' });
+    });
   } catch (error) {
-    console.error("Plant identification error:", error);
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error('Plant identification error:', error);
+    res.status(500).json({ error: 'Plant identification failed' });
   }
 });
 
@@ -280,10 +277,23 @@ app.post('/api/analyze-health', async (req, res) => {
           console.error('Failed to parse Python response:', result);
           res.status(500).json({ error: 'Invalid response from health analysis service' });
         }
+        try {
+          const analysis = JSON.parse(result);
+          res.json(analysis);
+        } catch (parseError) {
+          console.error('Failed to parse Python response:', result);
+          res.status(500).json({ error: 'Invalid response from health analysis service' });
+        }
       } else {
+        console.error('Python process exited with code:', code);
         console.error('Python process exited with code:', code);
         res.status(500).json({ error: 'Health analysis failed' });
       }
+    });
+
+    pythonProcess.on('error', (error) => {
+      console.error('Python process error:', error);
+      res.status(500).json({ error: 'Failed to start health analysis service' });
     });
 
     pythonProcess.on('error', (error) => {
